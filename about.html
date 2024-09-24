@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darlin Giovanna Velazquez Vargas</title>
+    <link rel="stylesheet" href="styles/darlin.css">
+    <link rel="icon" href="./assets/Logo E GD Interior Design Group - Octubre 2022.png" type="image/jpeg"> <!-- Favicon añadido -->
+</head>
+<body style="font-family: 'Times New Roman', serif;">
+    <header class="header hidden">
+        <div class="header__logo">
+            <a href="index.html">
+                <img src="./assets/Imagen de WhatsApp 2024-09-06 a las 01.00.17_29b6d356.jpg" alt="Logo" class="logo">
+            </a>
+        </div>
+        <nav class="header__Menu">
+            <a class="header__Menu__link" href="index.html">Inicio</a>
+            <a class="header__Menu__link" href="about.html">Darlin Giovanna Velazquez Vargas</a>
+            <a class="header__Menu__link" href="portafolio.html">Proyectos</a>
+            <a class="header__Menu__link" href="styles/Contacto.html">Contacto</a>
+        </nav>
+    </header>
+    
+    <!-- Imagenes panoramicas -->
+    <div class="carousel-container">
+        <div class="carousel-slides">
+            <!-- Imágenes originales -->
+            <div class="carousel-slide">
+                <img src="https://media.revistaad.es/photos/63ef4e424f8f3c358228df77/16:9/w_2560%2Cc_limit/NORDIC%2520GOYA%2520HIGH_027.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://media.revistaad.es/photos/60c74d6bf8ba795ce91ad492/4:3/w_2616,h_1962,c_limit/149599.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.pinimg.com/originals/17/0d/7d/170d7d5639241699fe2aa54cd6984048.jpg" alt="Image 3">
+            </div>
+            <!-- Duplicamos las imágenes para crear el bucle continuo -->
+            <div class="carousel-slide">
+                <img src="https://media.revistaad.es/photos/60c74d6bf8ba795ce91ad492/4:3/w_2616,h_1962,c_limit/149599.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://media.revistaad.es/photos/63ef4e424f8f3c358228df77/16:9/w_2560%2Cc_limit/NORDIC%2520GOYA%2520HIGH_027.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.pinimg.com/originals/17/0d/7d/170d7d5639241699fe2aa54cd6984048.jpg" alt="Image 3">
+            </div>
+        </div>
+    </div>
+
+    <main class="presentacion">
+        <div class="presentacion__contenido">
+            <div class="presentacion__texto">
+                <h1 class="presentacion__contenido__titulo">Sobre Mi</h1>
+                <p class="presentacion__contenido__texto">Soy Darlin Giovanna Velázquez Vargas, arquitecta e interiorista, CEO de DG Interior Design Group. Me especializo en crear ambientes excepcionales que combinan estética y funcionalidad, adaptándome a las necesidades de cada cliente, incluyendo el diseño de cocinas modulares. </p>
+                <p class="presentacion__contenido__texto">En nuestra firma, nos dedicamos a concebir y edificar espacios que no solo satisfacen las expectativas, sino que las superan. Con un compromiso firme con la calidad, ofrecemos soluciones arquitectónicas personalizadas que reflejan la singularidad de cada cliente.</p>
+                <p class="presentacion__contenido__texto">Nos destacamos por nuestra habilidad para integrar creatividad, funcionalidad y sostenibilidad en cada uno de nuestros proyectos. Nos comprometemos a brindar propuestas arquitectónicas que no solo sean visualmente atractivas, sino también eficientes y respetuosas con el medio ambiente.</p> 
+                <p class="presentacion__contenido__texto">Desde la conceptualización hasta la entrega final, trabajamos codo a codo contigo para entender tus requerimientos, transformándolos en espacios que inspiran y enriquecen tu calidad de vida. Con nosotros, cada proyecto representa una oportunidad para crear entornos que reflejen tu individualidad y superen tus expectativas.</p>
+                <p class="presentacion__contenido__texto4">¡Confía en nosotros para llevar tu visión arquitectónica a la realidad, prestando atención a cada detalle y garantizando que la experiencia sea gratificante y memorable!</p>
+            </div>
+            <img class="presentacion__imagen" src="./assets/darlinriendo.jpg" alt="Imagen de Darlin trabajando">
+        </div>
+
+        <div class="presentacion__texto-enumerado">
+            <div class="presentacion__item">
+                <span class="presentacion__numero numero-grande" data-target="100">0</span> + Proyectos realizados
+            </div>
+            <div class="presentacion__item">
+                <span class="presentacion__numero numero-pequeno" data-target="6">0</span> + Años de carrera
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const numeros = document.querySelectorAll('.presentacion__numero');
+
+            numeros.forEach(numero => {
+                const target = +numero.getAttribute('data-target');
+                let current = 0;
+
+                let increment;
+                let intervalTime;
+
+                if (numero.classList.contains('numero-grande')) {
+                    increment = Math.ceil(target / 200);
+                    intervalTime = 80;
+                } else if (numero.classList.contains('numero-pequeno')) {
+                    increment = Math.ceil(target / 500); // Menor incremento para números más pequeños
+                    intervalTime = 1200; // Mayor intervalo para que la animación sea más lenta
+                }
+
+                const interval = setInterval(() => {
+                    if (current >= target) {
+                        numero.textContent = target;
+                        clearInterval(interval);
+                    } else {
+                        current += increment;
+                        numero.textContent = current;
+                    }
+                }, intervalTime); // Intervalo de tiempo ajustado
+            });
+
+            const header = document.querySelector(".header");
+
+            // Aplica el efecto de aparición cuando la página se carga
+            header.classList.remove("hidden");
+            header.classList.add("visible");
+
+            // Agrega la clase "hidden" antes de cambiar de página
+            window.addEventListener('beforeunload', function() {
+                header.classList.remove("visible");
+                header.classList.add("hidden");
+            });
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Darlin Giovanna Velazquez Vargas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="styles/catorio.js"></script> <!-- Asegúrate de vincular tu JS -->
+</body>
+</html>
