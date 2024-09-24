@@ -705,7 +705,7 @@ img {
     }
 
     .video-estilo-container {
-        width: 100%; /* Ancho completo del contenedor */
+        width: 100%; /* Ajusta el ancho del contenedor al 100% */
         display: flex;
         justify-content: center; /* Centra el video horizontalmente */
         margin: 20px 0; /* Espacio superior e inferior para despegar el video */
@@ -713,8 +713,8 @@ img {
     
     .video-estilo {
         width: 100%; /* Ajusta el ancho del video al 100% del contenedor */
-        max-width: 1200px; /* Establece un ancho máximo mayor para el video */
-        height: auto; /* Mantiene la proporción de altura */
+        max-width: 900px; /* Establece un ancho máximo mayor para el video */
+        height: 450px; /* Define una altura fija para el video */
         border-radius: 10px; /* Bordes redondeados */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra alrededor del video */
         border: none; /* Sin borde */
