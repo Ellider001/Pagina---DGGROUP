@@ -157,7 +157,7 @@ header {
 .presentacion__contenido__texto2 {
     font-size: 1rem;
     font-family: var(--fuente-raleway);
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: justify; /* Justifica el texto, alineando ambos márgenes */
     margin: 0;
     padding: 0;
     line-height: 1.5; /* Mejora la legibilidad del texto */
@@ -597,7 +597,7 @@ img {
         margin-bottom: 20px; /* Espacio entre filas de elementos */
         max-width: 850px; /* Ajusta el ancho máximo del contenedor */
     }
-        
+    
     .foto-item {
         border-radius: 10px;
         overflow: hidden;
@@ -612,9 +612,11 @@ img {
     }
     
     .foto-item img {
-        width: 40%;
-        height: 100px;
-        object-fit: cover;
+        width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        max-width: 150px; /* Ajusta el ancho máximo de las imágenes a 150px */
+        max-height: 150px; /* Ajusta la altura máxima de las imágenes a 150px */
+        object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
         transition: transform .5s;
     }
     
@@ -721,3 +723,459 @@ img {
         margin-top: 40px; /* Espacio adicional arriba */
         margin-bottom: 40px; /* Espacio adicional abajo */
     }
+
+    .resolucion {
+        width: 99%;
+        text-align: center;
+    }
+    
+    
+   
+    
+   
+/* Para pantallas grandes (ordenadores) */
+@media (min-width: 1025px) {
+    .desktop {
+        display: block;
+    }
+    .tablet, .movil {
+        display: none;
+    }
+    .presentacion__imagenes {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tablet {
+        display: block;
+    }
+    .desktop, .movil {
+        display: none;
+    }
+    .presentacion__imagenes {
+        display: block;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 767px) {
+    .movil {
+        display: block;
+    }
+    .desktop, .tablet {
+        display: none;
+    }
+    .carousel-container {
+        position: relative;
+        width: 130%; /* Ajusta al 100% del ancho disponible */
+        overflow: hidden;
+        height: 600px; /* Ajusta la altura según sea necesario */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .carousel-slides {
+        display: flex; /* Alinea las imágenes en línea */
+        transition: transform 0.5s ease; /* Suaviza la transición al mover las imágenes */
+    }
+    
+    .carousel-slide {
+        min-width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 0 10px; /* Agrega espacio entre las imágenes */
+    }
+    
+    .carousel-slide img {
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho de su contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+  
+
+    /* Flex direction para header en móvil */
+    .header__Menu {
+        flex-direction: column;
+        margin-left: -20px; /* Ajusta este valor para mover el contenedor hacia la izquierda */
+        margin-bottom: 40px; /* Espacio entre imagen y texto numerado */
+        font-size: -1rem;
+    }
+
+    /* Imagen y texto enumerado se acomodan uno debajo del otro */
+    .presentacion__contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .header__Menu {
+        display: flex;
+        flex-direction: column; /* Cambia a columna si deseas que los elementos del menú estén en línea */
+        align-items: center; /* Alinea el contenido verticalmente */
+        margin-left: 20px; /* Mueve el menú un poco a la derecha */
+    }
+
+    .presentacion__header__Menu__link {
+         margin: 0 10px; /* Espaciado entre los enlaces */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente si es necesario */
+    
+    }
+
+    /* Aumentar el tamaño de la imagen en móviles */
+    .container-fotos-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 0 auto; /* Centra el contenedor horizontalmente */
+        margin-bottom: 20px; /* Espacio entre filas de elementos */
+        max-width: 850px; /* Ajusta el ancho máximo del contenedor */
+        width: 100%; /* Ocupa el 100% del ancho disponible */
+    }
+    
+    .foto-item {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+        transition: box-shadow .3s ease-in-out;
+        margin-bottom: 40px; /* Espacio entre la imagen y el texto */
+        text-align: center; /* Alinea el texto en el centro */
+    }
+    
+    .foto-item:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    }
+    
+    .foto-item img {
+        width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        max-width: 150px; /* Ajusta el ancho máximo de las imágenes a 150px */
+        max-height: 150px; /* Ajusta la altura máxima de las imágenes a 150px */
+        object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+        transition: transform .5s;
+    }
+    
+
+    /* Asegura que el texto esté centrado */
+    .presentacion__texto {
+        text-align: center;
+        padding: 10px;
+        font-size: 1.7rem;
+    }
+
+    .header__logo {
+        margin-left: -20px; /* Aumenta el valor para mover más a la izquierda en móviles */
+        margin-right: 20;
+        margin-top: -100px; /* Ajusta este valor para subir el logo más arriba */
+    }
+
+    /* Texto numerado debe ir debajo de la imagen */
+    .presentacion__texto-enumerado {
+        text-align: right;
+        margin-top: 30px; /* Espacio adicional entre la imagen y el texto numerado */
+        margin-bottom: 20px; /* Espacio entre imagen y texto numerado */
+    }
+
+    /* Ajustar tamaño de los números si es necesario en móvil */
+    .presentacion__numero {
+        font-size: 1.7rem;
+    }
+}
+
+.header__Menu__link {
+    font-size: -1rem; /* Tamaño de fuente por defecto (puedes ajustarlo) */
+    text-decoration: none; /* Para quitar el subrayado de los enlaces */
+    color: #DCC5A1; /* Color del texto (ajusta según sea necesario) */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .header__Menu__link {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+}
+
+/* Para móviles */
+@media (max-width: 767px) {
+    .presentacion__imagenes {
+        display: flex;
+        flex-direction: column; /* Asegura que las imágenes estén una debajo de la otra */
+        align-items: center; /* Centra las imágenes */
+    }
+    
+    .presentacion__imagenes img {
+        width: 200%; /* Ajusta este valor según necesites */
+        max-width: 300px; /* Establece un ancho máximo para que no sean demasiado grandes */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin-bottom: 20px; /* Espacio entre las imágenes */
+    }
+
+    .presentacion__imagen {
+        width: 80%; /* Ajusta este valor para cambiar el tamaño de la imagen */
+        max-width: 300px; /* Establece un ancho máximo si lo deseas */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 20px auto; /* Espacio alrededor de la imagen y centra horizontalmente */
+        display: block; /* Asegura que la imagen se comporte como un bloque */
+    }
+
+    .presentacion {
+        width: 100vw; /* Cambiar a 100vw para ocupar todo el ancho de la ventana */
+        max-width: none; /* Eliminar el ancho máximo */
+        margin: 20px 0; /* Espacio arriba y abajo, sin margen lateral */
+        padding: 0; /* Eliminar el padding lateral */
+        display: flex; /* Usar flexbox para centrar elementos */
+        flex-direction: column; /* Alinear en columna */
+        align-items: center; /* Centrar horizontalmente */
+    }
+    
+    .presentacion__contenido {
+        display: flex; /* Usar flexbox para alinear los íconos */
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        justify-content: space-around; /* Espacio uniforme entre elementos */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 0; /* Espacio alrededor del contenido */
+        box-sizing: border-box; /* Asegurar que el padding no afecte el ancho total */
+        max-width: none; /* Sin límite en el ancho */
+    }
+    
+    
+    .foto-item {
+        flex: 1 1 150px; /* Ajustar el tamaño */
+        max-width: 30%; /* Ancho máximo de los íconos (ajusta según sea necesario) */
+        margin: 10px; /* Espacio entre íconos */
+        text-align: center; /* Centrar texto debajo del ícono */
+    }
+    
+    .foto-item img {
+        width: 20px; /* Aumentar el tamaño del ícono */
+        height: auto; /* Mantener la proporción */
+    }
+    
+    .presentacion__contenido__titulo4,
+    .presentacion__contenido__texto {
+        font-size: 0.35rem; /* Tamaño de fuente */
+        margin: 5px 0; /* Espacio entre texto */
+    }
+
+    .presentacion__contenido__titulo3 {
+        font-size: 0.3rem; /* Tamaño de fuente más pequeño para el título */
+    }
+    
+    .presentacion__contenido__texto__servicios {
+        font-size: 0.35rem; /* Tamaño de fuente */
+        justify-content: space-around;
+        overflow: visible; /* Asegúrate de que el texto no se corte */
+        width: 100%; /* Ajusta el ancho según sea necesario */
+        line-height: 1.2; /* Mejora la legibilidad */
+        margin: 5px 0; /* Espacio entre texto */
+        text-align: center; /* Centrar texto debajo del ícono */
+    }
+
+    .presentacion__contenido__texto {
+        font-size: 0.9rem;
+        font-family: var(--fuente-raleway);
+        color: var(--color-gris);
+        text-align: justify; /* Justifica el texto */
+        margin: 0 auto; /* Centra el bloque de texto en el contenedor */
+        padding: 0;
+        margin-bottom: 20px;
+        line-height: 2.0; /* Mejora la legibilidad del texto */
+        width: 80%; /* Ajusta este valor para cambiar el ancho del bloque de texto */
+    }
+
+    .presentacion__contenido__texto2 {
+        font-size: 0.9rem;
+        font-family: var(--fuente-raleway);
+        color: var(--color-primario);
+        text-align: justify; /* Justifica el texto */
+        margin: 0 auto; /* Centra el bloque de texto en el contenedor */
+        padding: 0;
+        margin-bottom: 20px;
+        line-height: 2.0; /* Mejora la legibilidad del texto */
+        width: 80%; /* Ajusta este valor para cambiar el ancho del bloque de texto */
+    }
+
+
+  /* Main */
+.container-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive basado en el espacio disponible */
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    justify-items: center; /* Centra las imágenes horizontalmente */
+    align-items: center;   /* Centra las imágenes verticalmente */
+}
+
+.item {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: box-shadow .3s ease-in-out;
+    display: flex; /* Hacer que el contenedor use flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Asegura que el texto quede debajo de la imagen */
+}
+
+.item img {
+    width: 100%;
+    max-width: 300px; /* Ajusta según el tamaño deseado */
+    height: auto; /* Mantiene las proporciones */
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.item:hover img {
+    transform: scale(1.2);
+}
+
+.info-product {
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #808080;
+    text-align: center; /* Centra el texto debajo de la imagen */
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info-product button {
+    border: none;
+    background-color: #B19470;
+    color: #fff;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+}
+
+/* Media Queries Responsivos */
+
+/* Para pantallas medianas (laptops) */
+@media (max-width: 1200px) {
+    .container-items {
+        grid-template-columns: repeat(4, 1fr); /* Ajuste para 4 columnas */
+    }
+}
+
+/* Para pantallas medianas/pequeñas (tablets) */
+@media (max-width: 992px) {
+    .container-items {
+        grid-template-columns: repeat(3, 1fr); /* Ajuste para 3 columnas */
+    }
+}
+
+/* Para pantallas pequeñas (teléfonos grandes) */
+@media (max-width: 768px) {
+    .container-items {
+        grid-template-columns: repeat(2, 1fr); /* Ajuste para 2 columnas */
+    }
+}
+
+/* Para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 576px) {
+    .container-items {
+        grid-template-columns: 1fr; /* Ajuste para 1 columna */
+    }
+
+    * {
+        box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    }
+
+    .container-fotos-items {
+        flex: 1 1 150px; /* Ajustar el tamaño */
+        width: 100%; /* Asegura que ocupe el 100% del espacio */
+        max-width: 900px; /* Ajusta el ancho máximo según tu diseño */
+        margin: 10px auto; /* Centra el contenedor y espacio entre íconos */
+        text-align: center; /* Centrar el texto debajo de los íconos */
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Dos columnas por fila */
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px; /* Espacio entre filas de elementos */
+        justify-items: center; /* Centra las imágenes horizontalmente */
+        align-items: center;   /* Centra las imágenes verticalmente */
+
+        max-width: none; /* Permitir que el contenedor ocupe todo el ancho disponible */
+    padding: 0; /* Elimina el padding si es necesario */
+    margin: 0 auto; /* Centrar el contenedor si es necesario */
+
+    }
+    
+    .foto-item {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+        transition: box-shadow 0.3s ease-in-out;
+        margin-bottom: 40px; /* Espacio entre la imagen y el texto */
+        text-align: center; /* Alinear el texto al centro */
+      
+    }
+    
+    .foto-item:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    }
+    
+    .foto-item img {
+        width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+        transition: transform 0.5s;
+    }
+    
+    .foto-item:hover img {
+        transform: scale(1.2); /* Efecto de zoom al hacer hover */
+    }
+    
+    /* Añadir espacio entre la imagen y el texto */
+    .foto-item .info-product {
+        padding: 15px;
+        background-color: #fff; /* Asegúrate de que el fondo sea blanco si quieres que el texto se vea claramente */
+    }
+    
+    .presentacion__contenido__texto__servicios {
+        text-align: center; /* Justifica el texto */
+    font-size: 0.6rem; /* Tamaño de fuente */
+    margin: 5px 0; /* Espacio entre el texto */
+    line-height: 1.5; /* Ajustar el espaciado de línea para mejorar legibilidad */
+    width: 100%; /* Asegurar que el texto ocupe todo el ancho del contenedor */
+    padding: 0; /* Elimina el padding */
+    }
+    
+    .presentacion__contenido__titulo3 {
+        font-size: 0.7rem; /* Tamaño de fuente adecuado para el título */
+        text-align: center; /* Centrar el título */
+        margin-bottom: 10px; /* Espacio debajo del título */
+        
+    }
+    
+    @media (max-width: 768px) {
+        .container-fotos-items {
+            grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas más pequeñas */
+           
+        }
+    }
+}

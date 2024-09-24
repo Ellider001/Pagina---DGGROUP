@@ -725,3 +725,214 @@ img {
         height: 450px; /* Altura del mapa */
         border: none; /* Sin borde */
     }
+
+
+    .resolucion {
+        width: 99%;
+        text-align: center;
+    }
+    
+    
+/* Para pantallas grandes (ordenadores) */
+@media (min-width: 1025px) {
+    .desktop {
+        display: block;
+    }
+    .tablet, .movil {
+        display: none;
+    }
+    .presentacion__imagenes {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tablet {
+        display: block;
+    }
+    .desktop, .movil {
+        display: none;
+    }
+    .presentacion__imagenes {
+        display: block;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 767px) {
+    .movil {
+        display: block;
+    }
+    .desktop, .tablet {
+        display: none;
+    }
+    .carousel-container {
+        position: relative;
+        width: 136%; /* Ajusta al 100% del ancho disponible */
+        overflow: hidden;
+        height: 600px; /* Ajusta la altura según sea necesario */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-slides {
+        display: flex; /* Alinea las imágenes en línea */
+        transition: transform 0.5s ease; /* Suaviza la transición al mover las imágenes */
+    }
+    
+    .carousel-slide {
+        min-width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 0 10px; /* Agrega espacio entre las imágenes */
+    }
+    
+    .carousel-slide img {
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho de su contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+  
+
+    /* Flex direction para header en móvil */
+    .header__Menu {
+        flex-direction: column;
+        margin-left: -20px; /* Ajusta este valor para mover el contenedor hacia la izquierda */
+        margin-bottom: 40px; /* Espacio entre imagen y texto numerado */
+        font-size: -1rem;
+    }
+
+    /* Imagen y texto enumerado se acomodan uno debajo del otro */
+    .presentacion__contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .header__Menu {
+        display: flex;
+        flex-direction: column; /* Cambia a columna si deseas que los elementos del menú estén en línea */
+        align-items: center; /* Alinea el contenido verticalmente */
+        margin-left: 20px; /* Mueve el menú un poco a la derecha */
+    }
+
+    .presentacion__header__Menu__link {
+         margin: 0 10px; /* Espaciado entre los enlaces */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente si es necesario */
+    
+    }
+
+   /* Aumentar el tamaño de la imagen en móviles */
+   .presentacion__imagen {
+    width: 100%; /* Ajuste a 100% para que ocupe todo el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    margin-bottom: 20px; /* Espacio entre imagen y texto numerado */
+    text-align: center;
+    margin-left: 0; /* Eliminar margen izquierdo */
+    margin-top: 20px; /* Espacio adicional entre la imagen y el texto numerado */
+}
+
+.presentacion__imagen img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 100%; /* O puedes establecer una altura fija si lo deseas */
+    object-fit: contain; /* O usa cover, según tu preferencia */
+}
+
+    /* Asegura que el texto esté centrado */
+    .presentacion__texto {
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .header__logo {
+        margin-left: -20px; /* Aumenta el valor para mover más a la izquierda en móviles */
+        margin-right: 20;
+        margin-top: -100px; /* Ajusta este valor para subir el logo más arriba */
+    }
+
+    /* Texto numerado debe ir debajo de la imagen */
+    .presentacion__texto-enumerado {
+        text-align: right;
+        margin-top: 30px; /* Espacio adicional entre la imagen y el texto numerado */
+        margin-bottom: 20px; /* Espacio entre imagen y texto numerado */
+    }
+
+    /* Ajustar tamaño de los números si es necesario en móvil */
+    .presentacion__numero {
+        font-size: 1.7rem;
+    }
+
+    .presentacion {
+        width: 100vw; /* Cambiar a 100vw para ocupar todo el ancho de la ventana */
+        max-width: none; /* Eliminar el ancho máximo */
+        margin: 20px 0; /* Espacio arriba y abajo, sin margen lateral */
+        padding: 0; /* Eliminar el padding lateral */
+        display: flex; /* Usar flexbox para centrar elementos */
+        flex-direction: column; /* Alinear en columna */
+        align-items: center; /* Centrar horizontalmente */
+    }
+    
+    .presentacion__contenido {
+        display: flex; /* Usar flexbox para alinear los íconos */
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        justify-content: space-around; /* Espacio uniforme entre elementos */
+        width: 106%; /* Ocupa todo el ancho disponible */
+        padding: 0; /* Espacio alrededor del contenido */
+        box-sizing: border-box; /* Asegurar que el padding no afecte el ancho total */
+        max-width: none; /* Sin límite en el ancho */
+    }
+    
+    
+    .foto-item {
+        flex: 1 1 150px; /* Ajustar el tamaño */
+        max-width: 30%; /* Ancho máximo de los íconos (ajusta según sea necesario) */
+        margin: 10px; /* Espacio entre íconos */
+        text-align: center; /* Centrar texto debajo del ícono */
+    }
+    
+    .foto-item img {
+        width: 120px; /* Aumentar el tamaño del ícono */
+        height: auto; /* Mantener la proporción */
+    }
+    
+    .presentacion__contenido__titulo4,
+    .presentacion__contenido__texto {
+        font-size: 0.35rem; /* Tamaño de fuente */
+        margin: 5px 0; /* Espacio entre texto */
+    }
+}
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .foto-item {
+        flex: 1 1 100%; /* Ocupa el 100% del ancho en móviles */
+        max-width: 100%; /* Ancho máximo de los íconos en móviles */
+        margin: 20px 0; /* Espacio vertical entre íconos en móviles */
+    }
+
+    .foto-item img {
+        width: 100px; /* Ajustar el tamaño del ícono en móviles */
+    }
+
+    .presentacion__contenido__titulo4,
+    .presentacion__contenido__texto {
+        font-size: -1rem; /* Ajustar el tamaño de fuente en móviles para mejor legibilidad */
+    }
+}
+
+.header__Menu__link {
+    font-size: -1rem; /* Tamaño de fuente por defecto (puedes ajustarlo) */
+    text-decoration: none; /* Para quitar el subrayado de los enlaces */
+    color: #DCC5A1; /* Color del texto (ajusta según sea necesario) */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .header__Menu__link {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+}

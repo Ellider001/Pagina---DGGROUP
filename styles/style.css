@@ -702,3 +702,153 @@ img{
 #link-comprar {
     text-decoration: none; /* Elimina el subrayado del enlace */
 }
+
+
+.resolucion {
+    width: 99%;
+    text-align: center;
+}
+
+
+   
+/* Para pantallas grandes (ordenadores) */
+@media (min-width: 1025px) {
+    .desktop {
+        display: block;
+    }
+    .tablet, .movil {
+        display: none;
+    }
+    .presentacion__imagenes {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tablet {
+        display: block;
+    }
+    .desktop, .movil {
+        display: none;
+    }
+    .presentacion__imagenes {
+        display: block;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 767px) {
+    .movil {
+        display: block;
+    }
+    .desktop, .tablet {
+        display: none;
+    }
+    .carousel-container {
+        position: relative;
+        width: 130%; /* Ajusta al 100% del ancho disponible */
+        overflow: hidden;
+        height: 600px; /* Ajusta la altura según sea necesario */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .carousel-slides {
+        display: flex; /* Alinea las imágenes en línea */
+        transition: transform 0.5s ease; /* Suaviza la transición al mover las imágenes */
+    }
+    
+    .carousel-slide {
+        min-width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 0 10px; /* Agrega espacio entre las imágenes */
+    }
+    
+    .carousel-slide img {
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho de su contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+  
+
+    /* Flex direction para header en móvil */
+    .header__Menu {
+        flex-direction: column;
+        margin-left: -20px; /* Ajusta este valor para mover el contenedor hacia la izquierda */
+        margin-bottom: 40px; /* Espacio entre imagen y texto numerado */
+        font-size: -1rem;
+    }
+
+    /* Imagen y texto enumerado se acomodan uno debajo del otro */
+    .presentacion__contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .header__Menu {
+        display: flex;
+        flex-direction: column; /* Cambia a columna si deseas que los elementos del menú estén en línea */
+        align-items: center; /* Alinea el contenido verticalmente */
+        margin-left: 20px; /* Mueve el menú un poco a la derecha */
+    }
+
+    .presentacion__header__Menu__link {
+         margin: 0 10px; /* Espaciado entre los enlaces */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente si es necesario */
+    
+    }
+
+    /* Aumentar el tamaño de la imagen en móviles */
+    .presentacion__imagen {
+        width: 110%; /* Ajuste este valor para hacer la imagen más grande */
+        height: auto; /* Mantiene la proporción */
+        max-width: none; /* Elimina el límite del tamaño máximo para que pueda exceder el 100% */
+        margin-bottom: 20px; /* Espacio entre imagen y texto numerado */
+        text-align: center;
+        margin-left: -0px; /* Ajusta este valor para mover el contenedor hacia la izquierda */
+    }
+
+    /* Asegura que el texto esté centrado */
+    .presentacion__texto {
+        text-align: center;
+        padding: 10px;
+        font-size: 1.7rem;
+    }
+
+    .header__logo {
+        margin-left: -20px; /* Aumenta el valor para mover más a la izquierda en móviles */
+        margin-right: 20;
+        margin-top: -100px; /* Ajusta este valor para subir el logo más arriba */
+    }
+
+    /* Texto numerado debe ir debajo de la imagen */
+    .presentacion__texto-enumerado {
+        text-align: right;
+        margin-top: 30px; /* Espacio adicional entre la imagen y el texto numerado */
+        margin-bottom: 20px; /* Espacio entre imagen y texto numerado */
+    }
+
+    /* Ajustar tamaño de los números si es necesario en móvil */
+    .presentacion__numero {
+        font-size: 1.7rem;
+    }
+}
+
+.header__Menu__link {
+    font-size: -1rem; /* Tamaño de fuente por defecto (puedes ajustarlo) */
+    text-decoration: none; /* Para quitar el subrayado de los enlaces */
+    color: #DCC5A1; /* Color del texto (ajusta según sea necesario) */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .header__Menu__link {
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+}
+
+
